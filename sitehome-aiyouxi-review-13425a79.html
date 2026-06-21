@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 信息专题</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f2f4f7;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e2a3a;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .page-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* ——— hero ——— */
+    .hero {
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03), 0 1px 2px rgba(0,0,0,0.04);
+      padding: 3rem 2.5rem 2.5rem;
+      margin-bottom: 2.5rem;
+      border: 1px solid #e9edf2;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 550;
+      letter-spacing: -0.01em;
+      color: #0d1b2a;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero .sub {
+      font-size: 1.05rem;
+      color: #4a5b6e;
+      max-width: 640px;
+      margin: 0 auto 1.4rem;
+    }
+
+    .hero .tagline {
+      display: inline-block;
+      background: #eef2f7;
+      padding: 0.4rem 1.4rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      color: #2c3e50;
+      border: 1px solid #dce3ec;
+      letter-spacing: 0.3px;
+    }
+
+    /* ——— 卡片通用 ——— */
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02), 0 0 0 1px #eef2f6 inset;
+      padding: 2rem 2.2rem;
+      margin-bottom: 1.8rem;
+      border: 1px solid #e3e9f0;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 16px rgba(0,0,0,0.04), 0 0 0 1px #d4dde8 inset;
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #142433;
+      margin-bottom: 1rem;
+      border-left: 4px solid #38658f;
+      padding-left: 1rem;
+    }
+
+    .card p {
+      margin-bottom: 0.9rem;
+      color: #2a384a;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .card ul {
+      list-style: none;
+      margin: 1rem 0 0.2rem;
+    }
+
+    .card li {
+      position: relative;
+      padding-left: 1.6rem;
+      margin-bottom: 0.55rem;
+      color: #1f3142;
+    }
+
+    .card li::before {
+      content: "—";
+      position: absolute;
+      left: 0.2rem;
+      color: #4f7aa3;
+      font-weight: 300;
+    }
+
+    /* ——— 特点/场景 并排 ——— */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+    }
+
+    @media (max-width: 680px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .hero {
+        padding: 2rem 1.5rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .card {
+        padding: 1.6rem;
+      }
+    }
+
+    /* ——— 页尾 ——— */
+    .footer-note {
+      margin-top: 2.2rem;
+      padding: 2rem 0 0.5rem;
+      text-align: center;
+      border-top: 1px solid #dde3ec;
+      color: #3d5268;
+      font-size: 0.95rem;
+    }
+
+    .footer-note a {
+      color: #1d4b6e;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #8ba5c2;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .footer-note a:hover {
+      color: #0b304b;
+      border-bottom: 1px solid #1d4b6e;
+    }
+
+    .inline-link {
+      color: #1d4b6e;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #b0c4db;
+      transition: border-color 0.15s;
+    }
+
+    .inline-link:hover {
+      border-bottom: 1px solid #1d4b6e;
+    }
+
+    /* ——— FAQ 摘要 ——— */
+    .faq-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 550;
+      color: #0b293f;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item p {
+      color: #33485d;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e3e9f0;
+      margin: 0.8rem 0 1.4rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- hero 区域 -->
+    <header class="hero">
+      <h1>爱游戏 · 专题</h1>
+      <p class="sub">聚合内容入口与平台说明，为关注游戏资讯、测评与社区的用户提供稳定的信息界面。</p>
+      <span class="tagline">站点索引 · 2025</span>
+    </header>
+
+    <!-- 介绍 1：背景说明 -->
+    <section class="card">
+      <h2>站点定位与背景</h2>
+      <p><a href="https://sitehome-aiyouxi.com.cn" class="inline-link">爱游戏</a> 是一个以游戏内容聚合与用户交流为核心的平台。在信息碎片化的环境下，该站点希望提供一个相对集中的信息起点，方便访问者快速了解游戏动态、评测摘要与社区话题。其整体结构偏向于索引式呈现，避免信息过载，让用户可以根据兴趣自主深入。</p>
+      <p>从内容组织来看，首页承担了导航与摘要的双重功能。板块之间通过弱分类进行分隔，同时保持视觉上的连贯性。这种设计更适合既有明确查找目标、也愿意随意浏览的用户。</p>
+    </section>
+
+    <!-- 介绍 2：稳定性与入口逻辑 用grid -->
+    <div class="grid-2">
+      <div class="card">
+        <h2>稳定的访问入口</h2>
+        <p>对于经常查阅游戏信息的用户而言，入口的稳定性和加载效率直接影响使用体验。<a href="https://sitehome-aiyouxi.com.cn" class="inline-link">爱游戏</a> 在页面结构上采用了轻量化资源，首页首屏内容以文本与卡片为主，减少不必要的脚本阻塞。无论是桌面端还是移动网络环境，页面均能较快呈现核心信息。</p>
+        <p>此外，站点使用标准路径配置，长期维护同一入口地址，便于收藏夹与书签的持续使用。对于需要反复访问的玩家或从业者来说，这一点在日常使用中尤为实用。</p>
+      </div>
+      <div class="card">
+        <h2>说明与信息密度</h2>
+        <p>页面内的每个模块都力求在有限空间内提供足够的上下文。例如，卡片标题直接提示内容类别，列表中不堆砌无关关键词。用户可以在短时间内判断当前板块是否与自己的需求匹配，从而决定继续阅读或跳转。</p>
+        <p>从信息设计角度看，这种克制而清晰的说明风格降低了认知负担。同时，链接文字<span style="border-bottom:1px dotted #b0c4db;">“爱游戏”</span>在文中自然出现，保持可访问性而不破坏阅读节奏。</p>
+      </div>
+    </div>
+
+    <!-- 介绍 3：常见问题摘要 (FAQ 风格) -->
+    <section class="card">
+      <h2>常见问题摘要</h2>
+      <div class="faq-item">
+        <strong>▸ 如何找到特定游戏的最新消息？</strong>
+        <p>首页设有分类索引与最近更新区域。您也可以通过站内搜索（位于页面顶部）直接定位关键词。如果希望跟踪某个长期关注的系列，建议将 <a href="https://sitehome-aiyouxi.com.cn" class="inline-link">爱游戏</a> 添加到浏览器书签，定期查看首页轮播与列表摘要。</p>
+      </div>
+      <div class="faq-item">
+        <strong>▸ 页面上的内容是否定期更新？</strong>
+        <p>是的。站点维护团队会对首页的推荐条目、评测摘要以及热门讨论进行周期性刷新。一般情况下，重要游戏节点的信息会在 24 小时内出现在对应板块中。具体刷新频率根据内容类型略有差异，但整体保持同步。</p>
+      </div>
+      <div class="faq-item">
+        <strong>▸ 移动端浏览体验如何？</strong>
+        <p>页面采用响应式网格设计，在手机与平板设备上会自动调整为单列或紧凑布局。卡片间距、字体大小和触控区域均经过适配，确保在主流浏览器中无需缩放即可阅读。您可以直接在移动设备上访问 <a href="https://sitehome-aiyouxi.com.cn" class="inline-link">爱游戏</a>，无需额外下载应用。</p>
+      </div>
+      <hr>
+      <p style="color:#3e5770; font-size:0.93rem;">以上摘要基于页面当前结构与公开说明整理，具体功能以实际站点为准。</p>
+    </section>
+
+    <!-- 页尾 提示访问 -->
+    <div class="footer-note">
+      <p>若希望进一步了解游戏资讯、评测索引或社区讨论，可随时浏览 <a href="https://sitehome-aiyouxi.com.cn">爱游戏</a> 的主页内容。本专题页仅为信息说明与入口展示，不替代原始站点的完整功能。</p>
+      <p style="margin-top:0.8rem; font-size:0.85rem; color:#60758b;">© 介绍页 · 仅作演示</p>
+    </div>
+  </div>
+</body>
+</html>
