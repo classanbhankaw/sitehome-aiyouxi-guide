@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 入门知识库与实用指引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f8f6f0;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            color: #2e2b27;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .page-wrapper {
+            max-width: 920px;
+            width: 100%;
+            background: #fefcf7;
+            border-radius: 32px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.02);
+            padding: 2.5rem 2.2rem;
+            transition: box-shadow 0.2s;
+        }
+        @media (max-width: 640px) {
+            .page-wrapper {
+                padding: 1.5rem 1rem;
+                border-radius: 20px;
+            }
+        }
+
+        /* 排版基调 */
+        h1, h2, h3 {
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+        h1 {
+            font-size: 2.3rem;
+            line-height: 1.25;
+            margin-bottom: 0.75rem;
+            color: #1f1c19;
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin: 2.2rem 0 0.8rem 0;
+            border-left: 4px solid #d6c9b6;
+            padding-left: 0.9rem;
+            color: #3b3530;
+        }
+        h3 {
+            font-size: 1.15rem;
+            margin: 1.5rem 0 0.5rem 0;
+            color: #4d443c;
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+        a {
+            color: #6b5a45;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: #cbbba8;
+            transition: color 0.15s;
+        }
+        a:hover {
+            color: #3e3227;
+            text-decoration-color: #8f7b63;
+        }
+
+        /* 引用与提示块 */
+        .quote-block {
+            background: #f3efe7;
+            border-left: 5px solid #c1af98;
+            padding: 1.2rem 1.5rem;
+            margin: 1.8rem 0;
+            border-radius: 0 16px 16px 0;
+            font-style: normal;
+        }
+        .info-box {
+            background: #eae5db;
+            border-radius: 20px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.8rem 0;
+            display: flex;
+            gap: 0.7rem;
+            align-items: flex-start;
+        }
+        .info-box::before {
+            content: "📘";
+            font-size: 1.3rem;
+            line-height: 1.4;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+        .notice-box {
+            background: #f1ede4;
+            border: 1px solid #dacfc0;
+            border-radius: 18px;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            display: flex;
+            gap: 0.8rem;
+            align-items: flex-start;
+        }
+        .notice-box::before {
+            content: "💡";
+            font-size: 1.2rem;
+            line-height: 1.4;
+            flex-shrink: 0;
+        }
+
+        /* 卡片网格 —— 目录感 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
+            margin: 1.8rem 0;
+        }
+        .card-item {
+            background: #faf7f1;
+            border: 1px solid #e5dbcd;
+            border-radius: 20px;
+            padding: 1.3rem 1rem;
+            transition: background 0.1s, box-shadow 0.1s;
+        }
+        .card-item strong {
+            display: block;
+            font-weight: 500;
+            font-size: 1.05rem;
+            color: #3b3530;
+            margin-bottom: 0.35rem;
+        }
+        .card-item p {
+            font-size: 0.93rem;
+            color: #5b5249;
+            margin-bottom: 0;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ded3c3;
+            margin: 2.2rem 0;
+        }
+
+        .footer-note {
+            font-size: 0.9rem;
+            color: #7c7165;
+            margin-top: 2.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e3d9cb;
+            text-align: center;
+        }
+        .inline-link {
+            background: #f1ede4;
+            padding: 0.1rem 0.3rem;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #5b4a37;
+            border-bottom: 1px dotted #b5a48c;
+        }
+        .inline-link:hover {
+            background: #e5dbcd;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            .info-box, .notice-box {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <h1>📚 爱游戏 · 简明知识库</h1>
+    <p style="font-size:1rem; color:#5b5249; margin-bottom:1.8rem;">
+        站内指南 · 访问提醒 · 相关信息 &nbsp;|&nbsp; 整理自开放资料
+    </p>
+
+    <!-- 介绍 / 指南区 -->
+    <div class="quote-block">
+        <p style="margin-bottom:0;">如果你正在寻找一个围绕游戏内容展开的站点，<a href="https://main1-aiyouxi.com">爱游戏</a> 是一个可以常去翻阅的地方。这里没有复杂的门槛，只有对游戏本身朴素的兴趣。以下内容帮助你快速了解它的用途与访问方式。</p>
+    </div>
+
+    <h2>一、站点定位与特点</h2>
+    <p><strong>爱游戏</strong> 并非大型综合门户，而更像一个游戏资料的汇集节点。内容倾向于游戏信息整理、社区讨论摘要以及一些实用条目。如果你平时习惯自己搜攻略、查版本更新，那么这里的组织方式可能会让你觉得顺手。</p>
+    <p>从目前可见的板块来看，它包含这几个方向：</p>
+    <div class="card-grid">
+        <div class="card-item">
+            <strong>📋 游戏目录</strong>
+            <p>按类型或热度排列的游戏列表，附带简要说明与标签。</p>
+        </div>
+        <div class="card-item">
+            <strong>📝 条目与笔记</strong>
+            <p>类似知识卡片，记录特定游戏的核心设定、版本差异或彩蛋。</p>
+        </div>
+        <div class="card-item">
+            <strong>💬 讨论摘要</strong>
+            <p>社区中较有代表性的讨论整理，保留不同视角。</p>
+        </div>
+        <div class="card-item">
+            <strong>🔗 相关链接</strong>
+            <p>指向其他游戏资料站、工具或开发者的推荐链接。</p>
+        </div>
+    </div>
+
+    <h2>二、访问提醒与注意事项</h2>
+    <div class="info-box">
+        <div>
+            <p style="margin-bottom:0.2rem;"><strong>使用前建议了解：</strong></p>
+            <ul style="margin-left:1.2rem; padding-left:0.2rem; list-style:disc; color:#4d443c;">
+                <li>站点内容由爱好者自行组织，可能不保证绝对时效，重要信息建议交叉确认。</li>
+                <li>部分页面跳转后可能需要轻量注册或登录才能查看完整内容。</li>
+                <li>移动端浏览体验良好，但部分表格或代码块建议在宽屏下阅读。</li>
+            </ul>
+        </div>
+    </div>
+    <div class="notice-box">
+        <div>
+            <p style="margin-bottom:0;"><strong>推荐操作：</strong> 将 <a href="https://main1-aiyouxi.com">爱游戏</a> 加入书签，方便日常查阅。如果遇到页面加载异常，可稍后刷新或检查网络连接。</p>
+        </div>
+    </div>
+
+    <h2>三、常见疑问摘录</h2>
+    <p style="margin-bottom:0.5rem;">根据过往访问者反馈整理，不一定覆盖所有情况：</p>
+    <ul style="list-style: none; padding-left:0; margin-left:0;">
+        <li style="margin-bottom:0.6rem; padding-left:1.8rem; text-indent:-1.8rem;">🔹 <strong>内容更新频率？</strong> 不定时，但主要板块通常每月有新增或修订。</li>
+        <li style="margin-bottom:0.6rem; padding-left:1.8rem; text-indent:-1.8rem;">🔹 <strong>是否需要付费？</strong> 目前站内绝大部分内容免费阅读，部分增值功能或去广告选项另行说明。</li>
+        <li style="margin-bottom:0.6rem; padding-left:1.8rem; text-indent:-1.8rem;">🔹 <strong>能否转载站内资料？</strong> 建议先查看页面底部的版权说明，或直接联系维护者。</li>
+        <li style="margin-bottom:0.6rem; padding-left:1.8rem; text-indent:-1.8rem;">🔹 <strong>有移动端应用吗？</strong> 目前未发现官方独立 app，浏览器直接使用即可。</li>
+    </ul>
+
+    <h2>四、相关信息与延伸</h2>
+    <p>除了主站内容，有些用户也会配合以下资源一起使用：</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.8rem 1.5rem; margin: 1rem 0 0.5rem 0;">
+        <span style="background:#ede7dc; padding:0.2rem 1rem; border-radius:30px; font-size:0.9rem;">📌 游戏维基类站点</span>
+        <span style="background:#ede7dc; padding:0.2rem 1rem; border-radius:30px; font-size:0.9rem;">📌 更新日志归档</span>
+        <span style="background:#ede7dc; padding:0.2rem 1rem; border-radius:30px; font-size:0.9rem;">📌 玩家自建数据库</span>
+        <span style="background:#ede7dc; padding:0.2rem 1rem; border-radius:30px; font-size:0.9rem;">📌 跨平台存档工具</span>
+    </div>
+    <p style="margin-top:0.8rem;">如果你对某款游戏的背景设定或机制细节感兴趣，不妨先到 <a href="https://main1-aiyouxi.com">爱游戏</a> 搜索关键词，往往能发现一些别处不常提及的笔记。</p>
+
+    <hr>
+    <p style="font-size:0.95rem; color:#5b5249; background:#f6f1e9; padding:0.8rem 1.2rem; border-radius:30px; display:inline-block; margin-bottom:0.5rem;">🔍 提示：本页为知识库入口式介绍，内容基于公开信息整理，仅供参考。</p>
+
+    <div class="footer-note">
+        页面方向：知识库入口 · 目录感布局 ｜ 非官方镜像 · 仅作指引
+    </div>
+
+</div>
+</body>
+</html>
